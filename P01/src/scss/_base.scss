@@ -1,3 +1,6 @@
+@use 'mixins';
+@use 'variables';
+
 html,
 body {
     height: 100%;
@@ -8,16 +11,23 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     /* header | main | footer */
-    background: #f4f4f4;
-    font-family: system-ui, sans-serif;
+    background: var(--color-body-bg);
+    font-family: var(--font-main);
 }
 
 header,
 footer {
-    background: #333;
-    color: #fff;
-    padding: 12px 20px;
+    background: var(--color-header-footer-bg);
+    color: var(--color-header-footer-text);
+    padding: var(--padding-small);
     text-align: center;
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: row;
+    @include mixins.center;
+    gap: 15px;
 }
 
 main {
@@ -25,53 +35,66 @@ main {
     grid-template-rows: 1fr 3fr 1fr;
 
     >div:nth-child(1) {
-        background: lightblue;
-        padding: 20px;
+        background: var(--color-section-1);
+        padding: var(--padding-medium);
     }
 
     >div:nth-child(2) {
-        background: lightgreen;
-        padding: 20px;
+        background: var(--color-section-2);
+        padding: var(--padding-medium);
         display: grid;
         grid-template-columns: 1fr 4fr;
 
         >div:nth-child(1) {
-            background: lightyellow;
-            padding: 20px;
+            background: var(--color-section-2a);
+            padding: var(--padding-medium);
         }
 
         >div:nth-child(2) {
-            background: lightgray;
-            padding: 20px;
+            background: var(--color-section-2b);
+            padding: var(--padding-medium);
             display: grid;
             grid-template-rows: auto auto;
 
             >div:nth-child(1) {
-                background: lightpink;
-                padding: 20px;
+                background: var(--color-section-2b1);
+                padding: var(--padding-medium);
             }
 
             >div:nth-child(2) {
-                background: lightseagreen;
-                padding: 20px;
+                background: var(--color-section-2b2);
+                padding: var(--padding-medium);
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
+                @include mixins.center;
             }
         }
     }
 
     >div:nth-child(3) {
-        background: lightcoral;
-        padding: 20px;
+        background: var(--color-section-3);
+        padding: var(--padding-medium);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include mixins.center;
     }
 }
 
-.producto {
-    border: 2px solid #000;
-    margin: 10px;
-    padding: 10px 90px;
+.marco {
+    border: var(--marco-border);
+    margin: var(--marco-margin);
+    padding: var(--marco-padding);
     text-align: center;
+}
+
+.testimonio {
+    @extend .marco;
+    background: var(--color-section-2);
+}
+
+.producto {
+    @extend .marco;
+    background: var(--color-section-1);
 }

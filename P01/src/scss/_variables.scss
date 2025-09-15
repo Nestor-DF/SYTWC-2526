@@ -1,0 +1,27 @@
+:root {
+    /* Colores principales */
+    --color-body-bg: #f4f4f4;
+    --color-header-footer-bg: #333;
+    --color-header-footer-text: #fff;
+
+    /* Colores de secciones */
+    --color-section-1: lightblue;
+    --color-section-2: lightgreen;
+    --color-section-2a: lightyellow;
+    --color-section-2b: lightgray;
+    --color-section-2b1: lightpink;
+    --color-section-2b2: lightseagreen;
+    --color-section-3: lightcoral;
+
+    /* Tipografía */
+    --font-main: system-ui, sans-serif;
+
+    /* Espaciados */
+    --padding-small: 12px 20px;
+    --padding-medium: 20px;
+
+    /* Marco */
+    --marco-border: 2px solid #000;
+    --marco-margin: 10px;
+    --marco-padding: 10px 90px;
+}
