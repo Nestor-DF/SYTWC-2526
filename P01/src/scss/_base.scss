@@ -1,5 +1,7 @@
 @use 'mixins';
 @use 'variables';
+@use 'ejercicio1';
+@use 'ejercicio2';
 
 html,
 body {
@@ -8,24 +10,55 @@ body {
 
 body {
     margin: 0;
-    background: var(--color-body-bg);
+    background: ejercicio1.$color-primary; // Ejercicio 1
     font-family: var(--font-main);
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    /* header | main | footer */
+    grid-template-rows: auto 1fr auto; // Header, contenido, footer
     min-block-size: 100%;
+}
+
+h1 {
+    color: ejercicio1.$color-primary; // Ejercicio 1
+}
+
+h2 {
+    color: ejercicio1.$color-secondary; // Ejercicio 1
+}
+
+// Ejercicio 2
+.msg {
+    &--info {
+        @extend %message;
+        background: #e3f2fd;
+        color: #0d47a1;
+    }
+
+    &--success {
+        @extend %message;
+        background: #e8f5e9;
+        color: #1b5e20;
+    }
+
+    &--error {
+        @extend %message;
+        background: #ffebee;
+        color: #b71c1c;
+    }
+
+    &--error a {
+        font-weight: 700;
+    }
 }
 
 .site-header {
     background: var(--color-header);
-    color: var(--color-body-bg);
+    color: ejercicio1.$color-primary;
     padding-block: var(--space-2);
 
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    /* para poder posicionar el logo */
 
     .logo {
         position: absolute;
@@ -39,7 +72,7 @@ body {
 
 .site-footer {
     background: var(--color-footer);
-    color: var(--color-body-bg);
+    color: ejercicio1.$color-primary;
     padding-block: var(--space-2);
     text-align: center;
 }
@@ -81,7 +114,7 @@ body {
 
 .content {
     grid-area: content;
-    background: var(--color-body-bg);
+    background: ejercicio1.$color-primary;
     padding: var(--space-3);
     display: grid;
     gap: var(--space-3);
@@ -92,7 +125,8 @@ body {
         padding: var(--space-3);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
-        display: flex;
+        @include mixins.flex-dir(column); // Ejercicio 3
+        gap: var(--space-2);
         @include mixins.center();
         min-height: 540px;
     }
@@ -158,5 +192,5 @@ body {
 .testimonial {
     @extend %card;
     background: var(--color-section-2);
-    inline-size: min(200px, 100%);
+    @include mixins.size(200px, 30px); // Ejercicio 3
 }
