@@ -3,72 +3,64 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Plantilla básica para práctica" />
-    <title>Práctica 1</title>
+    <title>Práctica 1 · Los Mochoneros</title>
 </head>
 
 <body>
-    <header>
-        <h1>Los Mochoneros</h1>
+    <header class="site-header">
+        <div class="logo">
+            <img src="/public/vite.svg" alt="Logo de la empresa" width="50" height="50" />
+        </div>
+        <div>
+            <h1 class="title">Los Mochoneros</h1>
+        </div>
     </header>
 
-    <main>
-        <div class="navegacion">
-            <a href="https://www.google.com" target="_blank">Miau</a>
-            <a href="https://www.google.com" target="_blank">Guau</a>
-            <a href="https://www.google.com" target="_blank">Auuu</a>
-        </div>
+    <main id="contenido" class="layout">
+        <nav class="nav" aria-label="Navegación principal">
+            <ul class="nav__list">
+                <li><a class="nav__link" href="https://www.google.com" target="_blank"
+                        rel="noopener noreferrer">Miau</a></li>
+                <li><a class="nav__link" href="https://www.google.com" target="_blank"
+                        rel="noopener noreferrer">Guau</a></li>
+                <li><a class="nav__link" href="https://www.google.com" target="_blank"
+                        rel="noopener noreferrer">Auuu</a></li>
+            </ul>
+        </nav>
 
-        <div>
-            <div>
-                Menu
-            </div>
-            <div>
-                <div>
-                    Descripción de la empresa
-                </div>
-                <div>
-                    <div class="producto">
-                        Producto 1
-                    </div>
-                    <div class="producto">
-                        Producto 2
-                    </div>
-                    <div class="producto">
-                        Producto 3
-                    </div>
-                    <div class="producto">
-                        Producto 4
-                    </div>
-                    <div class="producto">
-                        Producto 5
-                    </div>
-                    <div class="producto">
-                        Producto 6
-                    </div>
-                </div>
-            </div>
-        </div>
+        <section class="content">
+            <aside class="content__menu" aria-label="Menú lateral">Menu</aside>
 
-        <div>
-            <div class="testimonio">
-                Testimonio 1
+            <div class="content__main">
+                <h2 class="description">Descripción de la empresa</h2>
+
+                <section class="products" aria-label="Listado de productos">
+                    <ul class="products__list">
+                        <li class="products__item">Producto 1</li>
+                        <li class="products__item">Producto 2</li>
+                        <li class="products__item">Producto 3</li>
+                        <li class="products__item">Producto 4</li>
+                        <li class="products__item">Producto 5</li>
+                        <li class="products__item">Producto 6</li>
+                    </ul>
+                </section>
             </div>
-            <div class="testimonio">
-                Testimonio 2
-            </div>
-            <div class="testimonio">
-                Testimonio 3
-            </div>
-            <div class="testimonio">
-                Testimonio 4
-            </div>
-        </div>
+        </section>
+
+        <section class="testimonials" aria-label="Testimonios">
+            <article class="testimonial">Testimonio 1</article>
+            <article class="testimonial">Testimonio 2</article>
+            <article class="testimonial">Testimonio 3</article>
+            <article class="testimonial">Testimonio 4</article>
+        </section>
     </main>
 
-    <footer>
-        <p>Garantías</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>Garantías</p>
+        </div>
     </footer>
 
     <script type="module" src="/src/main.js"></script>

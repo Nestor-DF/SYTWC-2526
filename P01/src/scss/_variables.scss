@@ -1,27 +1,22 @@
 :root {
-    /* Colores principales */
-    --color-body-bg: #f4f4f4;
-    --color-header-footer-bg: #333;
-    --color-header-footer-text: #fff;
+    --color-body-bg: #fff;
+    --color-header: #311253;
+    --color-footer: #470202;
+    --color-section-1: #d3e0ff;
+    --color-section-2: #aff8af;
+    --color-section-2a: #fac4ff;
+    --color-section-2b: #ffacac;
+    --color-section-2b1: #cdb3ff;
+    --color-section-2b2: #fffcce;
+    --color-section-3: #ffd1bb;
 
-    /* Colores de secciones */
-    --color-section-1: lightblue;
-    --color-section-2: lightgreen;
-    --color-section-2a: lightyellow;
-    --color-section-2b: lightgray;
-    --color-section-2b1: lightpink;
-    --color-section-2b2: lightseagreen;
-    --color-section-3: lightcoral;
+    --font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-    /* Tipografía */
-    --font-main: system-ui, sans-serif;
+    --radius: 12px;
+    --shadow: 0 2px 6px rgba(0, 0, 0, .06);
 
-    /* Espaciados */
-    --padding-small: 12px 20px;
-    --padding-medium: 20px;
-
-    /* Marco */
-    --marco-border: 2px solid #000;
-    --marco-margin: 10px;
-    --marco-padding: 10px 90px;
+    --space-1: clamp(0.5rem, 1.5vw, 0.75rem);
+    --space-2: clamp(0.75rem, 2vw, 1rem);
+    --space-3: clamp(1rem, 2.5vw, 1.25rem);
+    --space-4: clamp(1.25rem, 3vw, 1.5rem);
 }
