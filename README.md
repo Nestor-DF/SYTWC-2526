@@ -1,1 +1,1 @@
-## Repositorio que albergará las prácticas de la asignatura SISTEMAS Y TECNOLOGÍA WEB: CLIENTE
+## Monorepo para la asignatura SISTEMAS Y TECNOLOGÍAS WEB: CLIENTE
