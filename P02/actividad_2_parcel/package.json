@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel src/index.html --dist-dir dist",
     "build": "parcel build src/index.html --dist-dir build --public-url /repo-name/",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -b gh-pages -m \"Deploy\""
   },
   "keywords": [],
   "author": "",
