@@ -1,0 +1,21 @@
+:root {
+    --color-white: #ffffff;
+    --color-black: #252525;
+    --color-section-1: #d3e0ff;
+    --color-section-2: #aff8af;
+    --color-section-2a: #fac4ff;
+    --color-section-2b: #ffacac;
+    --color-section-2b1: #cdb3ff;
+    --color-section-2b2: #fffcce;
+    --color-section-3: #ffd1bb;
+
+    --font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+    --radius: 12px;
+    --shadow: 0 2px 6px rgba(0, 0, 0, .06);
+
+    --space-1: clamp(0.5rem, 1.5vw, 0.75rem);
+    --space-2: clamp(0.75rem, 2vw, 1rem);
+    --space-3: clamp(1rem, 2.5vw, 1.25rem);
+    --space-4: clamp(1.25rem, 3vw, 1.5rem);
+}

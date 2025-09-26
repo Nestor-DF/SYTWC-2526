@@ -1,0 +1,38 @@
+{
+  "name": "actividad_1_gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scaffold": "gulp scaffold",
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "dev": "gulp",
+    "serve": "gulp serve",
+    "sass": "gulp sass",
+    "minify-css": "gulp minify-css",
+    "js": "gulp js",
+    "images": "gulp images",
+    "watch": "gulp watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "del": "^8.0.1",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "sass": "^1.93.2"
+  }
+}

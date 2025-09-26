@@ -1,0 +1,135 @@
+@use 'mixins';
+@use 'variables';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--color-white);
+    font-family: var(--font-main);
+    display: grid;
+    grid-template-rows: auto 1fr auto; // Header, contenido, footer
+    min-block-size: 100%;
+}
+
+.site-header {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding-block: var(--space-3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .logo {
+        position: absolute;
+        left: var(--space-2);
+    }
+
+    .title {
+        margin: 0;
+    }
+}
+
+.site-footer {
+    background: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.layout {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "content"
+        "testimonials";
+    grid-template-rows: auto 1fr auto;
+}
+
+
+.nav {
+    grid-area: nav;
+    background: var(--color-section-1);
+    padding: var(--space-3);
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        @include mixins.center();
+    }
+
+    &__link {
+        text-decoration: none;
+        padding: .4rem .75rem;
+        border-radius: 999px;
+        outline-offset: 2px;
+        text-decoration: underline;
+    }
+}
+
+
+.content {
+    grid-area: content;
+    background: var(--color-white);
+    padding: var(--space-3);
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: 3fr 1fr;
+
+    &__menu {
+        background: var(--color-section-2a);
+        padding: var(--space-3);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        @include mixins.flex-dir(column);
+        gap: var(--space-2);
+        @include mixins.center();
+        min-height: 540px;
+    }
+
+    &__main {
+        background: var(--color-section-2b);
+        padding: var(--space-3);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: var(--space-3);
+    }
+}
+
+%card {
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    text-align: center;
+    box-shadow: var(--shadow);
+    background: #fff;
+}
+
+.products {
+    background: var(--color-section-2b2);
+    padding: var(--space-3);
+    border-radius: var(--radius);
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: var(--space-4);
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        @extend %card;
+        background: var(--color-section-1);
+    }
+}
