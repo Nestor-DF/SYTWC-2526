@@ -1,37 +1,37 @@
-name: Deploy GH Pages - P02/actividad_2_parcel
+# name: Deploy GH Pages - P02/actividad_2_parcel
 
-on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'P02/actividad_2_parcel/**'
-      - '.github/workflows/deploy.yml'
-  workflow_dispatch:
+# on:
+#   push:
+#     branches: [ main ]
+#     paths:
+#       - 'P02/actividad_2_parcel/**'
+#       - '.github/workflows/deploy.yml'
+#   workflow_dispatch:
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: P02/actividad_2_parcel
-    steps:
-      - uses: actions/checkout@v4
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         working-directory: P02/actividad_2_parcel
+#     steps:
+#       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
 
-      - name: Install deps
-        run: npm ci
+#       - name: Install deps
+#         run: npm ci
 
-      - name: Build
-        run: npm run build -- --public-url /SYTWC-2526/P02/actividad_2_parcel/
+#       - name: Build
+#         run: npm run build -- --public-url /SYTWC-2526/P02/actividad_2_parcel/
 
-      - name: Deploy to gh-pages/P02/actividad_2_parcel
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: P02/actividad_2_parcel/build
-          destination_dir: P02/actividad_2_parcel
-          keep_files: true
+#       - name: Deploy to gh-pages/P02/actividad_2_parcel
+#         uses: peaceiris/actions-gh-pages@v4
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_branch: gh-pages
+#           publish_dir: P02/actividad_2_parcel/build
+#           destination_dir: P02/actividad_2_parcel
+#           keep_files: true
