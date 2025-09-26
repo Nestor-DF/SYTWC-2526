@@ -1,0 +1,22 @@
+{
+  "name": "actividad_2_parcel",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/index.html --dist-dir dist",
+    "build": "parcel build src/index.html --dist-dir build --public-url /repo-name/",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@parcel/optimizer-image": "^2.16.0",
+    "@parcel/transformer-sass": "^2.16.0",
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.16.0",
+    "sass": "^1.93.2",
+    "sharp": "^0.34.4"
+  }
+}

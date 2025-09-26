@@ -1,0 +1,11 @@
+# Node
+node_modules/
+.parcel-cache/
+
+# Builds
+dist/
+build/
+
+# SO
+.DS_Store
+Thumbs.db
