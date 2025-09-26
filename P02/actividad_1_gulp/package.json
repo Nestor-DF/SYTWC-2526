@@ -8,7 +8,12 @@
     "clean": "gulp clean",
     "build": "gulp build",
     "dev": "gulp",
-    "serve": "gulp serve"
+    "serve": "gulp serve",
+    "sass": "gulp sass",
+    "minify-css": "gulp minify-css",
+    "js": "gulp js",
+    "images": "gulp images",
+    "watch": "gulp watch"
   },
   "keywords": [],
   "author": "",

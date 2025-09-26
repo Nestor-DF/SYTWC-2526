@@ -18,7 +18,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import gulpSass from 'gulp-sass';
-import dartSass from 'sass';
+import * as dartSass from 'sass';
 const sass = gulpSass(dartSass);
 
 const __filename = fileURLToPath(import.meta.url);
@@ -168,3 +168,10 @@ export const build = series(clean, parallel(html, styles, scripts, images));
 export { scaffold, clean, html, styles, scripts, images };
 export const serveTask = series(build, serve);
 export default series(build, serve);   // `gulp` => build + server + watch
+
+gulp.task('sass', styles);          // compila Sass + minifica + sourcemaps
+gulp.task('minify-css', styles);    // alias del anterior
+gulp.task('images', images);
+gulp.task('js', scripts);
+gulp.task('watch', serve);
+gulp.task('default', series(build, serve));
