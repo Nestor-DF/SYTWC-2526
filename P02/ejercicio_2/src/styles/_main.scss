@@ -1,0 +1,202 @@
+@use 'mixins';
+@use 'variables';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: variables.$color-primary; // Ejercicio 1
+    font-family: var(--font-main);
+    display: grid;
+    grid-template-rows: auto 1fr auto; // Header, contenido, footer
+    min-block-size: 100%;
+}
+
+h1 {
+    color: variables.$color-primary; // Ejercicio 1
+}
+
+h2 {
+    color: variables.$color-secondary; // Ejercicio 1
+}
+
+// Ejercicio 2
+%message {
+    padding: 12px 16px;
+    border-radius: 6px;
+    line-height: 1.4;
+    margin: 12px 0;
+    border: 1px solid rgba(0, 0, 0, .08);
+}
+
+.msg {
+    &--info {
+        @extend %message;
+        background: #e3f2fd;
+        color: #0d47a1;
+    }
+
+    &--success {
+        @extend %message;
+        background: #e8f5e9;
+        color: #1b5e20;
+    }
+
+    &--error {
+        @extend %message;
+        background: #ffebee;
+        color: #b71c1c;
+    }
+
+    &--error a {
+        font-weight: 700;
+    }
+}
+
+.site-header {
+    background: var(--color-header);
+    color: variables.$color-primary;
+    padding-block: var(--space-2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .logo {
+        position: absolute;
+        left: var(--space-2);
+    }
+
+    .title {
+        margin: 0;
+    }
+}
+
+.site-footer {
+    background: var(--color-footer);
+    color: variables.$color-primary;
+    padding-block: var(--space-2);
+    text-align: center;
+}
+
+.layout {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "content"
+        "testimonials";
+    grid-template-rows: auto 1fr auto;
+}
+
+
+.nav {
+    grid-area: nav;
+    background: var(--color-section-1);
+    padding: var(--space-3);
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        @include mixins.center();
+    }
+
+    &__link {
+        text-decoration: none;
+        padding: .4rem .75rem;
+        border-radius: 999px;
+        outline-offset: 2px;
+        text-decoration: underline;
+    }
+}
+
+
+.content {
+    grid-area: content;
+    background: variables.$color-primary;
+    padding: var(--space-3);
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: 1fr 3fr;
+
+    &__menu {
+        background: var(--color-section-2a);
+        padding: var(--space-3);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        @include mixins.flex-dir(column); // Ejercicio 3
+        gap: var(--space-2);
+        @include mixins.center();
+        min-height: 540px;
+    }
+
+    &__main {
+        background: var(--color-section-2b);
+        padding: var(--space-3);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: var(--space-3);
+    }
+}
+
+
+.description {
+    margin: 0;
+    background: var(--color-section-2b1);
+    padding: var(--space-3);
+    border-radius: var(--radius);
+    min-height: 290px;
+}
+
+%card {
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    text-align: center;
+    box-shadow: var(--shadow);
+    background: #fff;
+}
+
+.products {
+    background: var(--color-section-2b2);
+    padding: var(--space-3);
+    border-radius: var(--radius);
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: var(--space-4);
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    &__item {
+        @extend %card;
+        background: var(--color-section-1);
+    }
+}
+
+.testimonials {
+    grid-area: testimonials;
+    background: var(--color-section-3);
+    padding: var(--space-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    @include mixins.center();
+}
+
+.testimonial {
+    @extend %card;
+    background: var(--color-section-2);
+    @include mixins.size(200px, 30px); // Ejercicio 3
+}
