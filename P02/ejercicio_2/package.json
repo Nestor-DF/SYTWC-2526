@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel src/index.html --dist-dir dist",
+    "dev": "parcel src/index.html --dist-dir dist",
     "build": "parcel build src/index.html --dist-dir build --public-url /repo-name/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -b gh-pages -m \"Deploy\""
