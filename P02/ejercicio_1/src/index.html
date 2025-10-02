@@ -11,10 +11,10 @@
 <body>
     <header class="site-header">
         <div class="logo">
-            <img src="./assets/images/demo1.jpg" alt="Logo de la empresa" width="50" height="50" />
+            <img src="./images/demo1.jpg" alt="Logo de la empresa" width="50" height="50" />
         </div>
         <div>
-            <h1 class="title">Nombre empresa</h1>
+            <h1 class="title">Los Mochoneros</h1>
         </div>
     </header>
 
@@ -22,20 +22,26 @@
         <nav class="nav" aria-label="Navegación principal">
             <ul class="nav__list">
                 <li><a class="nav__link" href="https://www.google.com" target="_blank"
-                        rel="noopener noreferrer">Enlace 1</a></li>
+                        rel="noopener noreferrer">Miau</a></li>
                 <li><a class="nav__link" href="https://www.google.com" target="_blank"
-                        rel="noopener noreferrer">Enlace 2</a></li>
+                        rel="noopener noreferrer">Guau</a></li>
                 <li><a class="nav__link" href="https://www.google.com" target="_blank"
-                        rel="noopener noreferrer">Enlace 3</a></li>
+                        rel="noopener noreferrer">Auuu</a></li>
             </ul>
         </nav>
 
         <section class="content">
             <aside class="content__menu" aria-label="Menú lateral">
-                Sidebar
+                <div class="msg--info">Información: todo correcto por ahora.</div>
+                <div class="msg--success">Éxito: tu operación se completó bien.</div>
+                <div class="msg--error">Error: revisa <a href="https://www.google.com">este enlace</a> para más
+                    detalles.</div>
             </aside>
 
-            <div class="products">
+            <div class="content__main">
+                <h2 class="description">Descripción de la empresa</h2>
+
+                <section class="products" aria-label="Listado de productos">
                     <ul class="products__list">
                         <li class="products__item">Producto 1</li>
                         <li class="products__item">Producto 2</li>
@@ -44,13 +50,21 @@
                         <li class="products__item">Producto 5</li>
                         <li class="products__item">Producto 6</li>
                     </ul>
+                </section>
             </div>
+        </section>
+
+        <section class="testimonials" aria-label="Testimonios">
+            <article class="testimonial">Testimonio 1</article>
+            <article class="testimonial">Testimonio 2</article>
+            <article class="testimonial">Testimonio 3</article>
+            <article class="testimonial">Testimonio 4</article>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>Footer</p>
+            <p>Garantías</p>
         </div>
     </footer>
 
