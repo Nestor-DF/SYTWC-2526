@@ -8,7 +8,7 @@ body {
 
 body {
     margin: 0;
-    background: variables.$color-primary; // Ejercicio 1
+    background: variables.$color-primary;
     font-family: var(--font-main);
     display: grid;
     grid-template-rows: auto 1fr auto; // Header, contenido, footer
@@ -16,14 +16,14 @@ body {
 }
 
 h1 {
-    color: variables.$color-primary; // Ejercicio 1
+    color: variables.$color-primary;
 }
 
 h2 {
-    color: variables.$color-secondary; // Ejercicio 1
+    color: variables.$color-secondary;
 }
 
-// Ejercicio 2
+
 %message {
     padding: 12px 16px;
     border-radius: 6px;
@@ -131,7 +131,7 @@ h2 {
         padding: var(--space-3);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
-        @include mixins.flex-dir(column); // Ejercicio 3
+        @include mixins.flex-dir(column);
         gap: var(--space-2);
         @include mixins.center();
         min-height: 540px;
@@ -198,5 +198,5 @@ h2 {
 .testimonial {
     @extend %card;
     background: var(--color-section-2);
-    @include mixins.size(200px, 30px); // Ejercicio 3
+    @include mixins.size(200px, 30px);
 }

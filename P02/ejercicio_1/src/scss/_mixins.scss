@@ -3,8 +3,6 @@
     align-items: center;
 }
 
-
-// Ejercicio 3
 @mixin flex-dir($direction: row) {
     display: flex;
     flex-direction: $direction;
