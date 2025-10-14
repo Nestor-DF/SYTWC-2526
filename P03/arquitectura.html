@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquitectura — Micro-frontends</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            line-height: 1.45;
+            padding: 1.25rem;
+            max-width: 880px;
+            margin: auto;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: .1rem .35rem;
+            border-radius: 5px;
+        }
+
+        .box {
+            border: 1px dashed #cbd5e1;
+            padding: 1rem;
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Arquitectura basada en Micro-Frontends</h2>
+    <p>La página de inicio se compone de varios Web Components que se desarrollan y despliegan de forma independiente:
+    </p>
+
+    <div class="box">
+        <p><strong>Contenedor:</strong> <code>&lt;app-shell&gt;</code> (orquesta datos y distribución en grid).</p>
+        <p><strong>Componente de espacio:</strong> <code>&lt;canary-space&gt;</code> (muestra nombre, ubicación, fecha
+            de visita y rating medio).</p>
+        <p><strong>Componente de valoraciones:</strong> <code>&lt;space-ratings&gt;</code> (atiende a eventos y pinta
+            reseñas simuladas).</p>
+        <p><strong>Otros (opcionales):</strong> nav, footer, filtros, etc.</p>
+    </div>
+
+    <h2>Eventos y comunicación</h2>
+    <p><code>&lt;canary-space&gt;</code> emite <code>espacio-valoraciones</code> (bubbles + composed) para solicitar al
+        componente de valoraciones los datos simulados del espacio. También emite <code>dias-actualizados</code> para
+        que el contenedor actualice el encabezado global con los días transcurridos desde la última visita.</p>
+</body>
+
+</html>

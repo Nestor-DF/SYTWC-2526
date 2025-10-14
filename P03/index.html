@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espacios culturales de Canarias — Micro-frontends</title>
+
+    <!-- (Opcional) estilos rápidos -->
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 1rem;
+            background: #111822;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+            padding: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            align-items: start;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Espacios culturales de Canarias</h1>
+        <p id="diasHeader">Días desde la última visita: —</p>
+    </header>
+
+    <!-- Contenedor/host del micro-frontend -->
+    <app-shell class="grid"></app-shell>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

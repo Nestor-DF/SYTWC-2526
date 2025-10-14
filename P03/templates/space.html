@@ -1,0 +1,75 @@
+<template id="card-space">
+    <style>
+        :host {
+            display: block;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+        }
+
+        .img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .box {
+            padding: 14px;
+        }
+
+        h3 {
+            margin: 0 0 6px;
+            font-size: 1.05rem;
+        }
+
+        p {
+            margin: .25rem 0;
+            text-align: left;
+            font-weight: normal;
+            color: #333;
+        }
+
+        .row {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        button {
+            cursor: pointer;
+            padding: .6rem .9rem;
+            border-radius: 8px;
+            border: 0;
+            background: #0ea5e9;
+            color: white;
+            font-weight: 600;
+        }
+
+        .muted {
+            opacity: .75;
+            font-size: .9rem;
+        }
+
+        .rating {
+            font-weight: 700;
+        }
+    </style>
+
+    <img class="img" alt="Imagen del espacio" />
+    <div class="box">
+        <h3 class="nombre"></h3>
+        <p class="ubicacion"></p>
+        <p class="fecha muted"></p>
+        <div class="row">
+            <span class="rating"></span>
+            <button class="btn-valoraciones" part="btn">Mostrar valoraciones</button>
+        </div>
+
+        <!-- zona extensible por slot si hace falta -->
+        <slot></slot>
+    </div>
+</template>

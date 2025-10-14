@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E1 — Grid sin Web Components</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+        }
+
+        h1 {
+            padding: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+            padding: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        }
+
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .box {
+            padding: 12px;
+        }
+
+        .muted {
+            opacity: .75;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Espacios (mock API) — sin Web Components</h1>
+    <div id="grid" class="grid"></div>
+
+    <script type="module">
+        const grid = document.getElementById('grid');
+        const spaces = await fetch('/data/spaces.json').then(r => r.json());
+
+        spaces.forEach(s => {
+            const el = document.createElement('div');
+            el.className = 'card';
+            el.innerHTML = `
+        <img src="${s.imagen}" alt="Imagen de ${s.nombre}">
+        <div class="box">
+          <h3>${s.nombre}</h3>
+          <p>Ubicación: ${s.ubicacion}</p>
+          <p class="muted">Fecha de visita: ${s.fechaVisita}</p>
+          <p>⭐ ${s.valoracionMedia.toFixed(1)}</p>
+        </div>
+      `;
+            grid.appendChild(el);
+        });
+    </script>
+</body>
+
+</html>

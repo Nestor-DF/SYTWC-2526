@@ -1,0 +1,26 @@
+[
+    {
+        "id": "esp-1",
+        "nombre": "TEA Tenerife Espacio de las Artes",
+        "ubicacion": "Santa Cruz de Tenerife",
+        "fechaVisita": "2025-09-20",
+        "imagen": "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?w=1200",
+        "valoracionMedia": 4.6
+    },
+    {
+        "id": "esp-2",
+        "nombre": "CAAM - Centro Atlántico de Arte Moderno",
+        "ubicacion": "Las Palmas de Gran Canaria",
+        "fechaVisita": "2025-10-01",
+        "imagen": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+        "valoracionMedia": 4.4
+    },
+    {
+        "id": "esp-3",
+        "nombre": "TEA - Biblioteca",
+        "ubicacion": "Santa Cruz de Tenerife",
+        "fechaVisita": "2025-08-15",
+        "imagen": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200",
+        "valoracionMedia": 4.2
+    }
+]
