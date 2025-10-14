@@ -1,4 +1,3 @@
-// src/components/app-shell.js
 import './canary-space.js';
 import './space-ratings.js';
 

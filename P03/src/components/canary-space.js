@@ -1,4 +1,3 @@
-// src/components/canary-space.js
 const TEMPLATE_URL = '/templates/space.html';
 
 export class CanarySpace extends HTMLElement {
@@ -76,7 +75,7 @@ export class CanarySpace extends HTMLElement {
             this.#emitirDiasTranscurridos();
         } catch (err) {
             console.error('Error cargando espacio:', err);
-            this.#renderError('No se pudo cargar el espacio.');
+            // this.#renderError('No se pudo cargar el espacio.');
         }
     }
 
