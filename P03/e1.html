@@ -53,20 +53,20 @@
 
     <script type="module">
         const grid = document.getElementById('grid');
-        const spaces = await fetch('/data/spaces.json').then(r => r.json());
+        const spaces = await fetch('/data/espacios-culturales.json').then(r => r.json());
 
         spaces.forEach(s => {
             const el = document.createElement('div');
             el.className = 'card';
             el.innerHTML = `
-        <img src="${s.imagen}" alt="Imagen de ${s.nombre}">
-        <div class="box">
-          <h3>${s.nombre}</h3>
-          <p>Ubicación: ${s.ubicacion}</p>
-          <p class="muted">Fecha de visita: ${s.fechaVisita}</p>
-          <p>⭐ ${s.valoracionMedia.toFixed(1)}</p>
-        </div>
-      `;
+                <img src="${s.imagen}" alt="Imagen de ${s.nombre}">
+                <div class="box">
+                <h3>${s.nombre}</h3>
+                <p>Ubicación: ${s.ubicacion}</p>
+                <p class="muted">Fecha de visita: ${s.fechaVisita}</p>
+                <p>⭐ ${s.valoracionMedia.toFixed(1)}</p>
+                </div>
+            `;
             grid.appendChild(el);
         });
     </script>

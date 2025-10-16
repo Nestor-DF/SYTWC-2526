@@ -8,9 +8,7 @@ export class AppShell extends HTMLElement {
     }
 
     connectedCallback() {
-        // cargar datos y pintar tarjetas
         this.#init();
-        // escuchar evento global de días
         this.addEventListener('dias-actualizados', this._onDias);
     }
 
@@ -20,12 +18,10 @@ export class AppShell extends HTMLElement {
 
     async #init() {
         try {
-            const spaces = await fetch('/data/spaces.json').then(r => r.json());
+            const spaces = await fetch('/data/espacios-culturales.json').then(r => r.json());
 
-            // Ejemplo: muestra los 3 con mejor valoración (o todos, si prefieres)
             const top3 = [...spaces].sort((a, b) => b.valoracionMedia - a.valoracionMedia).slice(0, 3);
 
-            // Render de tarjetas
             this.innerHTML = '';
             top3.forEach(s => {
                 const card = document.createElement('canary-space');
@@ -33,9 +29,8 @@ export class AppShell extends HTMLElement {
                 this.appendChild(card);
             });
 
-            // Añadimos el micro-frontend de valoraciones (una vez)
             const ratings = document.createElement('space-ratings');
-            ratings.style.gridColumn = '1 / -1'; // que ocupe ancho completo al final
+            ratings.style.gridColumn = '1 / -1';
             this.appendChild(ratings);
 
         } catch (err) {
@@ -45,7 +40,6 @@ export class AppShell extends HTMLElement {
     }
 
     _onDias(e) {
-        // Actualiza el header global con el último valor recibido
         const dias = e.detail?.dias ?? '—';
         const el = document.querySelector('#diasHeader');
         if (el) el.textContent = `Días desde la última visita: ${dias}`;
