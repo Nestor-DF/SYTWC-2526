@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html --dist-dir dist",
-    "build": "parcel build src/index.html --dist-dir build --public-url /repo-name/",
+    "build": "parcel build src/index.html --dist-dir build --public-url ./",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -b gh-pages -m \"Deploy\""
   },
