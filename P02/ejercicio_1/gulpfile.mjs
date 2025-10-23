@@ -67,7 +67,7 @@ function images() {
             pngquant({ quality: [0.45, 0.6], speed: 1 }),
             gifsicle({ optimizationLevel: 3 }),
             svgo()
-        ], { verbose: true }))
+        ], { verbose: false }))
         .pipe(dest(paths.distIMG))
         .pipe(browserSync.stream());
 }
