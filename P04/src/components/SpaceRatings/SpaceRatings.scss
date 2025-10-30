@@ -1,0 +1,33 @@
+.sr {
+    display: block;
+    padding: 12px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.sr__title {
+    margin: 0 0 .5rem;
+}
+
+.sr__item {
+    padding: .5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.sr__item:last-child {
+    border-bottom: 0;
+}
+
+.sr__score {
+    font-weight: 700;
+}
+
+.sr__muted {
+    opacity: .75;
+    color: #334155;
+}
+
+.sr__error {
+    color: crimson;
+}

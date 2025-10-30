@@ -1,0 +1,26 @@
+[
+    {
+        "id": "esp-1",
+        "nombre": "TEA Tenerife Espacio de las Artes",
+        "ubicacion": "Santa Cruz de Tenerife",
+        "fechaVisita": "2025-09-29",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/39/TEA.Tenerife.jpg",
+        "valoracionMedia": 4.6
+    },
+    {
+        "id": "esp-2",
+        "nombre": "Centro Atlántico de Arte Moderno",
+        "ubicacion": "Las Palmas de Gran Canaria",
+        "fechaVisita": "2025-10-01",
+        "imagen": "https://www.cajacanarias.com/wp-content/uploads/2023/10/Espacio-Espacio-Cultural-de-LA-PALMA.jpg",
+        "valoracionMedia": 4.4
+    },
+    {
+        "id": "esp-3",
+        "nombre": "La ciudad de la eterna primavera",
+        "ubicacion": "Las Palmas de Gran Canaria",
+        "fechaVisita": "2025-10-15",
+        "imagen": "https://www.guiarepsol.com/content/dam/repsol-guia/contenidos-imagenes/viajar/vamos-de-excursion/que-ver-las-palmas-de-gran-canaria/Catedral_Santa_Ana_Detr%C3%A1s.jpg",
+        "valoracionMedia": 4.2
+    }
+]
