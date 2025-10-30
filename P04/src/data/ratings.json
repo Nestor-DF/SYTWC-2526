@@ -1,0 +1,20 @@
+[
+    {
+        "espacioId": "espacio-1",
+        "puntuacion": 5,
+        "usuario": "Ana",
+        "comentario": "Increíble experiencia."
+    },
+    {
+        "espacioId": "espacio-1",
+        "puntuacion": 4,
+        "usuario": "Luis",
+        "comentario": "Muy recomendable."
+    },
+    {
+        "espacioId": "espacio-2",
+        "puntuacion": 4,
+        "usuario": "Marta",
+        "comentario": "Gran acústica."
+    }
+]

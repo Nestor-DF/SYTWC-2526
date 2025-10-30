@@ -9,10 +9,7 @@ const IndexPage = () => {
         <Layout>
             <div className="p-4 space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                    <EspacioCultural espacioId="espacio-1">
-                        <p className="mt-3 text-sm text-slate-600">Contenido extra (slot).</p>
-                    </EspacioCultural>
-                    <EspacioCultural espacioId="espacio-2" mostrarValoraciones />
+                    <EspacioCultural espacioId="TEA Tenerife Espacio de las Artes"></EspacioCultural>
                 </div>
                 <SpaceRatings />
             </div>
