@@ -1,18 +1,22 @@
-import * as React from 'react'
-import Layout from '../components/layout'
-import { StaticImage } from 'gatsby-plugin-image'
+import * as React from "react"
+import Layout from "../components/layout"
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = () => {
     return (
         <Layout>
-            <h2>Inicio</h2>
-            <p>Bienvenido al portal cultural.</p>
-            <StaticImage
-                src="../images/example.png"
-                alt="Espacio cultural"
-            />
         </Layout>
     )
 }
+
+export const Head = () => (
+    <>
+        <title>Espacios culturales de Canarias — Micro-frontends</title>
+        <meta
+            name="description"
+            content="Portal de espacios culturales de Canarias: museos, teatros y galerías."
+        />
+    </>
+)
 
 export default IndexPage
