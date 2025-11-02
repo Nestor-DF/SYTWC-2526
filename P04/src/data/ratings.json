@@ -1,20 +1,68 @@
 [
     {
-        "espacioId": "espacio-1",
+        "customId": "esp-1",
         "puntuacion": 5,
         "usuario": "Ana",
         "comentario": "Increíble experiencia."
     },
     {
-        "espacioId": "espacio-1",
+        "customId": "esp-1",
         "puntuacion": 4,
         "usuario": "Luis",
         "comentario": "Muy recomendable."
     },
     {
-        "espacioId": "espacio-2",
+        "customId": "esp-1",
+        "puntuacion": 5,
+        "usuario": "Clara",
+        "comentario": "La arquitectura del edificio es una obra de arte en sí misma."
+    },
+    {
+        "customId": "esp-1",
+        "puntuacion": 5,
+        "usuario": "Raquel",
+        "comentario": "Personal muy amable y entorno inspirador."
+    },
+    {
+        "customId": "esp-2",
+        "puntuacion": 5,
+        "usuario": "Sergio",
+        "comentario": "Colecciones modernas muy bien curadas, excelente ambiente."
+    },
+    {
+        "customId": "esp-2",
+        "puntuacion": 3,
+        "usuario": "Laura",
+        "comentario": "El lugar es bonito, pero esperaba más variedad en las obras."
+    },
+    {
+        "customId": "esp-2",
+        "puntuacion": 5,
+        "usuario": "Andrés",
+        "comentario": "Una joya cultural en el corazón de la ciudad."
+    },
+    {
+        "customId": "esp-3",
         "puntuacion": 4,
-        "usuario": "Marta",
-        "comentario": "Gran acústica."
+        "usuario": "Julia",
+        "comentario": "El recorrido por la ciudad fue encantador, muy bien guiado."
+    },
+    {
+        "customId": "esp-3",
+        "puntuacion": 5,
+        "usuario": "Pablo",
+        "comentario": "Las vistas y el clima hacen honor al nombre, inolvidable."
+    },
+    {
+        "customId": "esp-3",
+        "puntuacion": 3,
+        "usuario": "Elena",
+        "comentario": "Bonito lugar, pero algo masificado."
+    },
+    {
+        "customId": "esp-3",
+        "puntuacion": 4,
+        "usuario": "Tomás",
+        "comentario": "Ideal para pasear y disfrutar de la arquitectura local."
     }
 ]

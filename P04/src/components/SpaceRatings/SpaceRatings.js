@@ -7,7 +7,7 @@ export function SpaceRatings({ className = "" }) {
 
     useEffect(() => {
         function handle(e) {
-            const id = e?.detail?.espacioId;
+            const id = e?.detail?.customId;
             if (id) setCurrentId(id);
         }
         if (typeof document !== "undefined") {
@@ -20,7 +20,7 @@ export function SpaceRatings({ className = "" }) {
     query RatingsQuery {
       allRatingsJson {
         nodes {
-          espacioId
+          customId
           puntuacion
           usuario
           comentario
@@ -30,7 +30,7 @@ export function SpaceRatings({ className = "" }) {
   `);
 
     const list = useMemo(
-        () => (currentId ? data?.allRatingsJson?.nodes?.filter(n => n.puntuacion === 4) ?? [] : []),
+        () => (currentId ? data?.allRatingsJson?.nodes?.filter(n => n.customId === currentId) ?? [] : []),
         [data, currentId]
     );
 

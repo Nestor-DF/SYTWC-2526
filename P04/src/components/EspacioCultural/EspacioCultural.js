@@ -2,12 +2,12 @@ import React, { useMemo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import "./EspacioCultural.scss";
 
-export function EspacioCultural({ espacioId, className = "", children }) {
+export function EspacioCultural({ customId, className = "", children }) {
     const data = useStaticQuery(graphql`
     query EspaciosQuery {
       allEspaciosCulturalesJson {
         nodes {
-          id
+          customId
           nombre
           ubicacion
           fechaVisita
@@ -19,16 +19,14 @@ export function EspacioCultural({ espacioId, className = "", children }) {
   `);
 
     const espacio = useMemo(
-        () => data?.allEspaciosCulturalesJson?.nodes?.find(n => n.nombre === espacioId) || null,
-        [data, espacioId]
+        () => data?.allEspaciosCulturalesJson?.nodes?.find(n => n.customId === customId) || null,
+        [data, customId]
     );
 
-    console.log(data?.allEspaciosCulturalesJson?.nodes);
-
     const emitirPeticionValoraciones = () => {
-        if (typeof document !== "undefined" && espacio?.id) {
+        if (typeof document !== "undefined" && espacio?.customId) {
             document.dispatchEvent(new CustomEvent("espacio-valoraciones", {
-                detail: { espacioId: espacio.id },
+                detail: { customId: espacio.customId },
                 bubbles: true,
                 composed: true
             }));

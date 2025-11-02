@@ -7,11 +7,19 @@ import { SpaceRatings } from "../components/SpaceRatings/SpaceRatings"
 const IndexPage = () => {
     return (
         <Layout>
-            <div className="p-4 space-y-4">
-                <div className="grid gap-4 sm:grid-cols-2">
-                    <EspacioCultural espacioId="TEA Tenerife Espacio de las Artes"></EspacioCultural>
+            <div className="flex flex-row gap-4">
+                <div className="flex flex-col items-center">
+                    <EspacioCultural customId="esp-1" />
+                    <SpaceRatings />
                 </div>
-                <SpaceRatings />
+                <div className="flex flex-col items-center">
+                    <EspacioCultural customId="esp-2" />
+                    <SpaceRatings />
+                </div>
+                <div className="flex flex-col items-center">
+                    <EspacioCultural customId="esp-3" />
+                    <SpaceRatings />
+                </div>
             </div>
         </Layout>
     )

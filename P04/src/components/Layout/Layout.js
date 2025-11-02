@@ -11,9 +11,8 @@ const Layout = ({ children }) => {
 
             <nav>
                 <Link to="/">Inicio</Link>
-                <Link to="/museo">Museo</Link>
-                <Link to="/teatro">Teatro</Link>
-                <Link to="/galeria">Galería</Link>
+                <Link to="/mas-info">Más información</Link>
+                <Link to="/preguntas-frecuentes">Preguntas frecuentes</Link>
                 <Link to="/contacto">Contacto</Link>
             </nav>
 
@@ -22,7 +21,7 @@ const Layout = ({ children }) => {
                     <div>Menú lateral</div>
                 </aside>
 
-                <div className="grid-espacios">
+                <div>
                     {children}
                 </div>
             </section>
