@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import "./Layout.scss"
+import { StaticImage } from "gatsby-plugin-image";
 
 const Layout = ({ children }) => {
     return (
@@ -19,6 +20,13 @@ const Layout = ({ children }) => {
             <section className="content">
                 <aside className="content__menu" aria-label="Menú lateral">
                     <div>Menú lateral</div>
+                    <StaticImage
+                        src="../../images/flag.png"
+                        alt="Vista del espacio cultural"
+                        placeholder="blurred"
+                        layout="constrained"
+                        width={300}
+                    />
                 </aside>
 
                 <div>

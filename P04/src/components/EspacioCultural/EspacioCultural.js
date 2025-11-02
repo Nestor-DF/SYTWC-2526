@@ -36,7 +36,6 @@ export function EspacioCultural({ customId, className = "", children }) {
         );
     }
 
-    // Si hay children, inyectamos las props que necesita SpaceRatings
     const childrenWithProps = React.Children.map(children, (child) =>
         React.isValidElement(child)
             ? React.cloneElement(child, {
@@ -51,7 +50,7 @@ export function EspacioCultural({ customId, className = "", children }) {
             {espacio.imagen && (
                 <img
                     className="ec__img"
-                    src={espacio.imagen}
+                    src={espacio.imagen} // dinamico -> StaticImage no va bien
                     alt={`Imagen de ${espacio.nombre}`}
                     loading="lazy"
                 />

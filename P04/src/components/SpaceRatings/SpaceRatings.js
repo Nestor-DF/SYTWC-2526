@@ -24,7 +24,7 @@ export function SpaceRatings({ customId, visible = false, className = "" }) {
     return (
         <section className={`sr ${className}`.trim()} aria-live="polite">
             <h4 className="sr__title">Valoraciones</h4>
-            {!visible && <div className="sr__muted">Pulsa “Mostrar valoraciones” en esta tarjeta…</div>}
+            {!visible && <div className="sr__muted">Pulsa “Mostrar valoraciones”</div>}
             {visible && list.length === 0 && (
                 <div className="sr__muted">Este espacio aún no tiene valoraciones simuladas.</div>
             )}
