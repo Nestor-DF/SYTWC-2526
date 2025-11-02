@@ -1,0 +1,44 @@
+[
+    {
+        "customId": "esp-1",
+        "titulo": "TEA Tenerife Espacio de las Artes impulsa residencias artísticas para jóvenes creadores",
+        "contenido": "El TEA Tenerife Espacio de las Artes ha lanzado un nuevo programa de residencias dirigido a jóvenes artistas canarios. La iniciativa busca fomentar la creación contemporánea y promover el intercambio con otros centros de arte del Atlántico.",
+        "autor": "María López",
+        "fecha": "2025-10-28"
+    },
+    {
+        "customId": "esp-1",
+        "titulo": "El TEA presenta una muestra sobre arte y sostenibilidad en Canarias",
+        "contenido": "La exposición 'Islas de Luz' reúne a más de 20 artistas que exploran la relación entre arte, naturaleza y sostenibilidad en el archipiélago. La muestra estará abierta hasta finales de diciembre y contará con visitas guiadas y talleres educativos.",
+        "autor": "Carlos Pérez",
+        "fecha": "2025-10-30"
+    },
+    {
+        "customId": "esp-2",
+        "titulo": "El CAAM inaugura la exposición 'Atlántico Expandido'",
+        "contenido": "El Centro Atlántico de Arte Moderno (CAAM) de Las Palmas de Gran Canaria presenta 'Atlántico Expandido', una exposición que explora los lazos culturales entre África, América y Europa a través de la obra de artistas contemporáneos de las tres regiones.",
+        "autor": "Lucía Fernández",
+        "fecha": "2025-10-31"
+    },
+    {
+        "customId": "esp-2",
+        "titulo": "El CAAM desarrolla un innovador programa educativo digital",
+        "contenido": "El Centro Atlántico de Arte Moderno ha lanzado una plataforma interactiva que permite recorrer sus exposiciones de forma virtual y acceder a materiales pedagógicos diseñados para colegios e institutos de todo el archipiélago.",
+        "autor": "Javier Torres",
+        "fecha": "2025-11-01"
+    },
+    {
+        "customId": "esp-3",
+        "titulo": "‘La ciudad de la eterna primavera’ acoge un ciclo de cine sobre patrimonio canario",
+        "contenido": "La Casa de Colón alberga este mes un ciclo de cine documental dedicado al patrimonio cultural y natural de las Islas Canarias, con producciones locales y coloquios con directores y expertos.",
+        "autor": "Sofía Gómez",
+        "fecha": "2025-10-29"
+    },
+    {
+        "customId": "esp-3",
+        "titulo": "Crece la participación vecinal en las actividades culturales de ‘La ciudad de la eterna primavera’",
+        "contenido": "Las Palmas de Gran Canaria registra un aumento en la asistencia a talleres, exposiciones y rutas patrimoniales organizadas por la Casa de Colón y otras instituciones locales, consolidando su papel como epicentro cultural de la isla.",
+        "autor": "Andrés Molina",
+        "fecha": "2025-10-27"
+    }
+]

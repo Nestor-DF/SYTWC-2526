@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import "./EspacioCultural.scss";
+import { Link } from "gatsby"
 
 export function EspacioCultural({ customId, className = "", children }) {
     const data = useStaticQuery(graphql`
@@ -67,6 +68,9 @@ export function EspacioCultural({ customId, className = "", children }) {
                     >
                         {mostrarRatings ? "Ocultar valoraciones" : "Mostrar valoraciones"}
                     </button>
+                    <Link to="/noticias" state={{ customId: espacio.customId }} className="ec__btn">
+                        Noticias
+                    </Link>
                 </div>
 
                 {childrenWithProps}
