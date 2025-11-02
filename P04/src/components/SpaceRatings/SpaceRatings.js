@@ -1,21 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import "./SpaceRatings.scss";
 
-export function SpaceRatings({ className = "" }) {
-    const [currentId, setCurrentId] = useState(null);
-
-    useEffect(() => {
-        function handle(e) {
-            const id = e?.detail?.customId;
-            if (id) setCurrentId(id);
-        }
-        if (typeof document !== "undefined") {
-            document.addEventListener("espacio-valoraciones", handle);
-            return () => document.removeEventListener("espacio-valoraciones", handle);
-        }
-    }, []);
-
+export function SpaceRatings({ customId, visible = false, className = "" }) {
     const data = useStaticQuery(graphql`
     query RatingsQuery {
       allRatingsJson {
@@ -29,21 +16,25 @@ export function SpaceRatings({ className = "" }) {
     }
   `);
 
-    const list = useMemo(
-        () => (currentId ? data?.allRatingsJson?.nodes?.filter(n => n.customId === currentId) ?? [] : []),
-        [data, currentId]
-    );
+    const list = useMemo(() => {
+        if (!customId) return [];
+        return data?.allRatingsJson?.nodes?.filter((n) => n.customId === customId) ?? [];
+    }, [data, customId]);
 
     return (
         <section className={`sr ${className}`.trim()} aria-live="polite">
             <h4 className="sr__title">Valoraciones</h4>
-            {!currentId && <div className="sr__muted">Pulsa “Mostrar valoraciones” en una tarjeta…</div>}
-            {currentId && list.length === 0 && <div className="sr__muted">Este espacio aún no tiene valoraciones simuladas.</div>}
-            {currentId && list.length > 0 && (
+            {!visible && <div className="sr__muted">Pulsa “Mostrar valoraciones” en esta tarjeta…</div>}
+            {visible && list.length === 0 && (
+                <div className="sr__muted">Este espacio aún no tiene valoraciones simuladas.</div>
+            )}
+            {visible && list.length > 0 && (
                 <div className="sr__list">
                     {list.map((v, idx) => (
-                        <div key={`${currentId}-${idx}`} className="sr__item">
-                            <div><span className="sr__score">⭐ {v.puntuacion}</span> — {v.usuario}</div>
+                        <div key={`${customId}-${idx}`} className="sr__item">
+                            <div>
+                                <span className="sr__score">⭐ {v.puntuacion}</span> — {v.usuario}
+                            </div>
                             <div>{v.comentario}</div>
                         </div>
                     ))}
