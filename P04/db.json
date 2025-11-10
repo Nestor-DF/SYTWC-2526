@@ -1,0 +1,140 @@
+{
+    "espacios": [
+        {
+            "customId": "esp-1",
+            "nombre": "TEA Tenerife Espacio de las Artes",
+            "ubicacion": "Santa Cruz de Tenerife",
+            "fechaVisita": "2025-09-29",
+            "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/39/TEA.Tenerife.jpg",
+            "valoracionMedia": 4.6
+        },
+        {
+            "customId": "esp-2",
+            "nombre": "Centro Atlántico de Arte Moderno",
+            "ubicacion": "Las Palmas de Gran Canaria",
+            "fechaVisita": "2025-10-01",
+            "imagen": "https://www.cajacanarias.com/wp-content/uploads/2023/10/Espacio-Espacio-Cultural-de-LA-PALMA.jpg",
+            "valoracionMedia": 4.4
+        },
+        {
+            "customId": "esp-3",
+            "nombre": "La ciudad de la eterna primavera",
+            "ubicacion": "Las Palmas de Gran Canaria",
+            "fechaVisita": "2025-10-15",
+            "imagen": "https://www.elnortedecastilla.es/contentfactory/post/wp-content/uploads/2022/09/Las-Palmas-de-Gran-Canaria-Casa-de-Colon-1024x683.jpg",
+            "valoracionMedia": 4.2
+        }
+    ],
+    "noticias": [
+        {
+            "customId": "esp-1",
+            "titulo": "TEA Tenerife Espacio de las Artes impulsa residencias artísticas para jóvenes creadores",
+            "contenido": "El TEA Tenerife Espacio de las Artes ha lanzado un nuevo programa de residencias dirigido a jóvenes artistas canarios. La iniciativa busca fomentar la creación contemporánea y promover el intercambio con otros centros de arte del Atlántico.",
+            "autor": "María López",
+            "fecha": "2025-10-28"
+        },
+        {
+            "customId": "esp-1",
+            "titulo": "El TEA presenta una muestra sobre arte y sostenibilidad en Canarias",
+            "contenido": "La exposición 'Islas de Luz' reúne a más de 20 artistas que exploran la relación entre arte, naturaleza y sostenibilidad en el archipiélago. La muestra estará abierta hasta finales de diciembre y contará con visitas guiadas y talleres educativos.",
+            "autor": "Carlos Pérez",
+            "fecha": "2025-10-30"
+        },
+        {
+            "customId": "esp-2",
+            "titulo": "El CAAM inaugura la exposición 'Atlántico Expandido'",
+            "contenido": "El Centro Atlántico de Arte Moderno (CAAM) de Las Palmas de Gran Canaria presenta 'Atlántico Expandido', una exposición que explora los lazos culturales entre África, América y Europa a través de la obra de artistas contemporáneos de las tres regiones.",
+            "autor": "Lucía Fernández",
+            "fecha": "2025-10-31"
+        },
+        {
+            "customId": "esp-2",
+            "titulo": "El CAAM desarrolla un innovador programa educativo digital",
+            "contenido": "El Centro Atlántico de Arte Moderno ha lanzado una plataforma interactiva que permite recorrer sus exposiciones de forma virtual y acceder a materiales pedagógicos diseñados para colegios e institutos de todo el archipiélago.",
+            "autor": "Javier Torres",
+            "fecha": "2025-11-01"
+        },
+        {
+            "customId": "esp-3",
+            "titulo": "‘La ciudad de la eterna primavera’ acoge un ciclo de cine sobre patrimonio canario",
+            "contenido": "La Casa de Colón alberga este mes un ciclo de cine documental dedicado al patrimonio cultural y natural de las Islas Canarias, con producciones locales y coloquios con directores y expertos.",
+            "autor": "Sofía Gómez",
+            "fecha": "2025-10-29"
+        },
+        {
+            "customId": "esp-3",
+            "titulo": "Crece la participación vecinal en las actividades culturales de ‘La ciudad de la eterna primavera’",
+            "contenido": "Las Palmas de Gran Canaria registra un aumento en la asistencia a talleres, exposiciones y rutas patrimoniales organizadas por la Casa de Colón y otras instituciones locales, consolidando su papel como epicentro cultural de la isla.",
+            "autor": "Andrés Molina",
+            "fecha": "2025-10-27"
+        }
+    ],
+    "ratings": [
+        {
+            "customId": "esp-1",
+            "puntuacion": 5,
+            "usuario": "Ana",
+            "comentario": "Increíble experiencia."
+        },
+        {
+            "customId": "esp-1",
+            "puntuacion": 4,
+            "usuario": "Luis",
+            "comentario": "Muy recomendable."
+        },
+        {
+            "customId": "esp-1",
+            "puntuacion": 5,
+            "usuario": "Clara",
+            "comentario": "La arquitectura del edificio es una obra de arte en sí misma."
+        },
+        {
+            "customId": "esp-1",
+            "puntuacion": 5,
+            "usuario": "Raquel",
+            "comentario": "Personal muy amable y entorno inspirador."
+        },
+        {
+            "customId": "esp-2",
+            "puntuacion": 5,
+            "usuario": "Sergio",
+            "comentario": "Colecciones modernas muy bien curadas, excelente ambiente."
+        },
+        {
+            "customId": "esp-2",
+            "puntuacion": 3,
+            "usuario": "Laura",
+            "comentario": "El lugar es bonito, pero esperaba más variedad en las obras."
+        },
+        {
+            "customId": "esp-2",
+            "puntuacion": 5,
+            "usuario": "Andrés",
+            "comentario": "Una joya cultural en el corazón de la ciudad."
+        },
+        {
+            "customId": "esp-3",
+            "puntuacion": 4,
+            "usuario": "Julia",
+            "comentario": "El recorrido por la ciudad fue encantador, muy bien guiado."
+        },
+        {
+            "customId": "esp-3",
+            "puntuacion": 5,
+            "usuario": "Pablo",
+            "comentario": "Las vistas y el clima hacen honor al nombre, inolvidable."
+        },
+        {
+            "customId": "esp-3",
+            "puntuacion": 3,
+            "usuario": "Elena",
+            "comentario": "Bonito lugar, pero algo masificado."
+        },
+        {
+            "customId": "esp-3",
+            "puntuacion": 4,
+            "usuario": "Tomás",
+            "comentario": "Ideal para pasear y disfrutar de la arquitectura local."
+        }
+    ]
+}
