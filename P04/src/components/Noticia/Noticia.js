@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import "./Noticia.scss";
 
 export function Noticia({ customId, className = "", children }) {

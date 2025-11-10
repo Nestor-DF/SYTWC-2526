@@ -20,6 +20,11 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.16",
     "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gatsby-plugin-eslint": "^4.0.4",
     "gatsby-plugin-postcss": "^6.15.0",
     "postcss": "^8.5.6",
     "prettier": "^2.8.8",
@@ -33,10 +38,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint --ext .js,.jsx src"
   },
   "repository": {
     "type": "git",

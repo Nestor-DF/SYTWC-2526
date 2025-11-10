@@ -1,5 +1,4 @@
-import React, { useMemo } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
 import Layout from "../components/Layout/Layout";
 import { Noticia } from "../components/Noticia/Noticia";
 import { useLocation } from "@reach/router";

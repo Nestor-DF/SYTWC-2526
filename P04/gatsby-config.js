@@ -31,6 +31,14 @@ module.exports = {
                 path: `${__dirname}/src/data/`,
             },
         },
+        {
+            resolve: 'gatsby-plugin-eslint',
+            options: {
+                stages: ['develop', 'build-javascript'],
+                extensions: ['js', 'jsx'],
+                exclude: ['node_modules', '.cache', 'public'],
+            },
+        },
         `gatsby-transformer-json`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
