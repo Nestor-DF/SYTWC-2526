@@ -9,7 +9,7 @@ const NoticiasPage = () => {
 
     return (
         <Layout>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-4" data-testid="noticias-container">
                 <Noticia customId={customId}></Noticia>
             </div>
         </Layout>

@@ -21,6 +21,7 @@
     "@tailwindcss/postcss": "^4.1.16",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.2.1",
+    "cypress": "^15.6.0",
     "eslint": "^8.57.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
@@ -45,7 +46,9 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "lint": "eslint --ext .js,.jsx src",
-    "server": "npx json-server --watch db.json --port 8001"
+    "server": "npx json-server --watch db.json --port 8001",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "repository": {
     "type": "git",
