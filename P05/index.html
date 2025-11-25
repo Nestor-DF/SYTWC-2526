@@ -1,34 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SyTWeb: Audio Player</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.2/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 
-<body>
+<body class="bg-gray-100">
 
     <div class="flex items-center justify-center h-screen">
-        <div class="flex flex-col items-center border-2 border-sky-500">
+        <div
+            class="flex flex-col items-center border-2 border-sky-500 rounded-lg p-4 bg-white space-y-4 w-full max-w-md">
 
             <audio id="myAudioPlayer" preload="metadata">
                 <source src="./assets/JustTheTwoOfUs.mp3" type="audio/mpeg">
             </audio>
 
-            <div class="player">
-                <button id="playPause">▶ Play</button>
-                <button id="stop">⏹ Stop</button>
+            <div class="player w-full space-y-3">
 
-                <label>
-                    Volumen:
-                    <input autocomplete="off" type="range" id="volume" min="0" max="100" value="100">
-                </label>
+                <div class="flex flex-wrap gap-2 justify-center">
+                    <button id="playPause" class="px-3 py-1 border rounded">▶ Play</button>
+                    <button id="stop" class="px-3 py-1 border rounded">⏹ Stop</button>
+                    <button id="backward" class="px-3 py-1 border rounded">⏮ -10s</button>
+                    <button id="forward" class="px-3 py-1 border rounded">⏭ +10s</button>
+                </div>
 
-                <div>
+                <div id="progressContainer" class="w-full h-2 bg-gray-200 rounded cursor-pointer">
+                    <div id="progressBar" class="h-2 bg-blue-500 rounded" style="width: 0%;"></div>
+                </div>
+
+                <div class="text-center text-sm">
                     <span id="currentTime">0:00</span> /
                     <span id="duration">0:00</span>
+                </div>
+
+                <div class="flex flex-row items-center justify-center gap-3 text-sm">
+                    <label class="flex items-center gap-2">
+                        Volumen:
+                        <input autocomplete="off" type="range" id="volume" min="0" max="100" value="100"
+                            class="volume-slider">
+                    </label>
+
+                    <button id="mute" class="px-3 py-1 border rounded">🔊 Mute</button>
+
+                    <label class="flex items-center gap-2">
+                        Velocidad:
+                        <select id="playbackRate" class="border rounded px-1 py-0.5">
+                            <option value="0.5">0.5x</option>
+                            <option value="1" selected>1x</option>
+                            <option value="1.5">1.5x</option>
+                            <option value="2">2x</option>
+                        </select>
+                    </label>
                 </div>
             </div>
 
