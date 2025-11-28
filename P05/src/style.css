@@ -1,22 +1,104 @@
+.btn {
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    border: 1px solid #e5e7eb;
+    background-color: #000000;
+    color: #f9fafb;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+
+.btn:hover {
+    background-color: #1f2937;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:focus-visible {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 2px;
+}
+
+.control-select {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.control-select:hover {
+    background-color: #111827;
+}
+
+.control-select:focus-visible {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 2px;
+}
+
+.control-select option {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 .volume-slider {
+    -webkit-appearance: none;
     appearance: none;
     width: 120px;
     height: 6px;
-    background-color: rgb(229 231 235);
-    border-radius: 5px;
-}
-
-.volume-slider::-webkit-slider-runnable-track {
-    height: 6px;
-    border-radius: 5px;
+    background: #3f5370;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
 }
 
 .volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 14px;
+    appearance: none;
     width: 14px;
-    background-color: rgb(59 130 246);
+    height: 14px;
+    background: #ffffff;
     border-radius: 50%;
     cursor: pointer;
-    margin-top: -4px;
+    transition: background 150ms ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    background: #ffffff;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #0ea5e9;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #3f5370;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #ffffff;
+    border-radius: 4px;
+    transition: width 120ms linear;
 }
