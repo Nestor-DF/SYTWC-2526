@@ -52,7 +52,6 @@ speedRange.addEventListener("input", (e) => {
     speedLabel.textContent = stepInterval;
 });
 
-// Permitir clicks en el canvas para activar/desactivar celdas
 canvas.addEventListener("click", (event) => {
     const rect = canvas.getBoundingClientRect();
     const x = event.clientX - rect.left;
