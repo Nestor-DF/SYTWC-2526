@@ -1,7 +1,12 @@
-import React, { Suspense, useEffect, useMemo, useRef } from "react";
-import * as THREE from "three";
+import React, { Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, Html, useGLTF } from "@react-three/drei";
+import {
+    OrbitControls,
+    Environment,
+    Html,
+    useGLTF,
+    useAnimations,
+} from "@react-three/drei";
 
 function LoadingOverlay() {
     return (
@@ -23,17 +28,36 @@ function LoadingOverlay() {
 }
 
 function SkinModel({ url }) {
+    const group = useRef();
     const gltf = useGLTF(url);
 
+    const { actions, names, mixer } = useAnimations(gltf.animations, group);
+
+    useEffect(() => {
+        if (!actions || !names || names.length === 0) return;
+
+        // Reproduce la primera (o única) animación del modelo
+        const firstName = names[0];
+        const action = actions[firstName];
+        if (!action) return;
+
+        action.reset().fadeIn(0.15).play();
+
+        return () => {
+            // Limpieza robusta al cambiar de modelo
+            mixer?.stopAllAction();
+            Object.values(actions).forEach((a) => a?.stop());
+        };
+    }, [actions, names, mixer, url]);
+
     return (
-        <group scale={0.01} position={[0, -1, 0]}>
+        <group ref={group} scale={0.01} position={[0, -1, 0]}>
             <primitive object={gltf.scene} />
         </group>
     );
 }
 
 export default function ModelViewer({ url, background = "#0b0f1a" }) {
-    // Recomendado para mejor calidad de color en PBR
     const dpr = Math.min(window.devicePixelRatio, 2);
 
     return (
@@ -44,25 +68,26 @@ export default function ModelViewer({ url, background = "#0b0f1a" }) {
                 borderRadius: 12,
                 overflow: "hidden",
                 background,
-                border: "1px solid rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255, 255, 255, 1)",
             }}
         >
             <Canvas
                 dpr={dpr}
-                camera={{ position: [0, 1.6, 4.5], fov: 45, near: 0.1, far: 100 }}
+                camera={{ position: [0, 1, 5], fov: 50, near: 0.1, far: 100 }}
                 gl={{ antialias: true, alpha: false }}
             >
-                {/* Fondo */}
                 <color attach="background" args={[background]} />
 
-                {/* Luces base (además del HDRI) */}
-                <ambientLight intensity={0.35} />
-                <directionalLight position={[4, 6, 3]} intensity={1.1} />
+                <ambientLight intensity={0.4} />
+                <directionalLight position={[4, 6, 3]} intensity={2.1} />
 
-                {/* HDRI / entorno (preset evita tener que descargar texturas) */}
-                <Environment files="/hdri/qwantani_night_puresky_4k.hdr" background />
+                <mesh position={[2, 1, 0]}>
+                    <sphereGeometry args={[0.3, 32, 32]} />
+                    <meshStandardMaterial metalness={0.2} roughness={0.4} />
+                </mesh>
 
-                {/* Controles de cámara */}
+                {/* <Environment files="/hdri/qwantani_night_puresky_4k.hdr"/> */}
+
                 <OrbitControls
                     enableDamping
                     dampingFactor={0.08}
@@ -71,19 +96,13 @@ export default function ModelViewer({ url, background = "#0b0f1a" }) {
                     target={[0, 1, 0]}
                 />
 
-                {/* Suelo sutil para referencia visual */}
-                <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.9, 0]}>
-                    <planeGeometry args={[40, 40]} />
-                    <meshStandardMaterial color="#0d1220" roughness={1} metalness={0} />
-                </mesh>
-
                 <Suspense fallback={<LoadingOverlay />}>
-                    <SkinModel url={url} />
+                    {/* Fuerza remount al cambiar de URL para evitar reutilización del mixer */}
+                    <SkinModel key={url} url={url} />
                 </Suspense>
             </Canvas>
         </div>
     );
 }
 
-// Pre-carga opcional: si quieres, en App.jsx puedes llamar useGLTF.preload(url)
 useGLTF.preload("/models/placeholder.glb");
