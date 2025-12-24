@@ -57,7 +57,7 @@ function SkinModel({ url }) {
     );
 }
 
-export default function ModelViewer({ url, background = "#0b0f1a" }) {
+export default function ModelViewer({ url, background = "rgb(23,23,23)" }) {
     const dpr = Math.min(window.devicePixelRatio, 2);
 
     return (
@@ -68,7 +68,7 @@ export default function ModelViewer({ url, background = "#0b0f1a" }) {
                 borderRadius: 12,
                 overflow: "hidden",
                 background,
-                border: "1px solid rgba(255, 255, 255, 1)",
+                border: "1px solid rgb(255, 255, 255)",
             }}
         >
             <Canvas
@@ -78,15 +78,9 @@ export default function ModelViewer({ url, background = "#0b0f1a" }) {
             >
                 <color attach="background" args={[background]} />
 
-                <ambientLight intensity={0.4} />
+                {/* <ambientLight intensity={0.4} /> */}
                 <directionalLight position={[4, 6, 3]} intensity={2.1} />
-
-                <mesh position={[2, 1, 0]}>
-                    <sphereGeometry args={[0.3, 32, 32]} />
-                    <meshStandardMaterial metalness={0.2} roughness={0.4} />
-                </mesh>
-
-                {/* <Environment files="/hdri/qwantani_night_puresky_4k.hdr"/> */}
+                <Environment files="/hdri/qwantani_night_puresky_4k.hdr" />
 
                 <OrbitControls
                     enableDamping
