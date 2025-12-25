@@ -15,13 +15,13 @@ function LoadingOverlay() {
                 style={{
                     padding: "10px 14px",
                     borderRadius: 8,
-                    background: "rgba(0,0,0,0.65)",
+                    background: "rgb(23,23,23)",
                     color: "white",
                     fontFamily: "system-ui, sans-serif",
                     fontSize: 14,
                 }}
             >
-                Cargando modelo…
+                Loading skin...
             </div>
         </Html>
     );
@@ -36,22 +36,20 @@ function SkinModel({ url }) {
     useEffect(() => {
         if (!actions || !names || names.length === 0) return;
 
-        // Reproduce la primera (o única) animación del modelo
         const firstName = names[0];
         const action = actions[firstName];
         if (!action) return;
 
-        action.reset().fadeIn(0.15).play();
+        action.reset().fadeIn(0.2).play();
 
         return () => {
-            // Limpieza robusta al cambiar de modelo
             mixer?.stopAllAction();
             Object.values(actions).forEach((a) => a?.stop());
         };
     }, [actions, names, mixer, url]);
 
     return (
-        <group ref={group} scale={0.01} position={[0, -1, 0]}>
+        <group ref={group} scale={0.01} position={[0, 0, 0]}>
             <primitive object={gltf.scene} />
         </group>
     );
@@ -78,14 +76,14 @@ export default function ModelViewer({ url, background = "rgb(23,23,23)" }) {
             >
                 <color attach="background" args={[background]} />
 
-                {/* <ambientLight intensity={0.4} /> */}
-                <directionalLight position={[4, 6, 3]} intensity={2.1} />
+                {/* <ambientLight intensity={0.1} /> */}
+                <directionalLight position={[4, 6, 3]} intensity={0.3} />
                 <Environment files="/hdri/qwantani_night_puresky_4k.hdr" />
 
                 <OrbitControls
                     enableDamping
-                    dampingFactor={0.08}
-                    minDistance={2.5}
+                    dampingFactor={0.1}
+                    minDistance={1.5}
                     maxDistance={10}
                     target={[0, 1, 0]}
                 />
@@ -99,4 +97,4 @@ export default function ModelViewer({ url, background = "rgb(23,23,23)" }) {
     );
 }
 
-useGLTF.preload("/models/placeholder.glb");
+useGLTF.preload("/models/arcana_aurora.glb");
